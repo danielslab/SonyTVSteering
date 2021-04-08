@@ -31,6 +31,16 @@ def poweroff():
     }
     r = requests.post(url, json.dumps(payload), headers=headers)
 
+def reboot():
+    url = f"http://{TV}/sony/system"
+    payload = {
+        "method": "requestReboot",
+        "id": 10,
+        "params": [],
+        "version": "1.0"
+    }
+    r = requests.post(url, json.dumps(payload), headers=headers)
 
 #audiovolume("+10")
-poweroff()
+#poweroff()
+reboot()
