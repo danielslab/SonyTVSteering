@@ -4,7 +4,7 @@ import json
 TV = '192.168.178.26'  # TV-IP
 PSK = "12345"  # PSK from TV
 
-headers = {'X-Auth-PSK': '12345',
+headers = {'X-Auth-PSK': PSK,
            'content-type': 'application/json'}
 
 def audio(value):
