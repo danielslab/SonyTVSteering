@@ -2,5 +2,5 @@
 Steering of Sony Bavaria TV via Rest-API
 
 
-API-Dkumentation:
+API-Dokumentation:
 https://pro-bravia.sony.net/develop/index.html
