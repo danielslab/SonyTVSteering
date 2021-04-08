@@ -11,12 +11,22 @@ headers = {'X-Auth-PSK': PSK,
            'content-type': 'application/json'}
 
 
-def audio(value):
-    url = f"http://{TV}/sony/audio"
+def audiovolume(value):
+    url = f"http://{TV}/sony/system"
     payload = {"method": "setAudioVolume", "version": "1.0", "id": 1,
                "params": [{"target": "speaker", "volume": value}]}
     r = requests.post(url, json.dumps(payload), headers=headers)
-    print(type(value))
+
+def poweroff():
+    url = f"http://{TV}/sony/system"
+    payload = {
+        "method": "setPowerStatus",
+        "id": 1,
+        "params": [{"status": False}],
+        "version": "1.0"
+    }
+    r = requests.post(url, json.dumps(payload), headers=headers)
 
 
-audio("+10")
+#audiovolume("+10")
+poweroff()
